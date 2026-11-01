@@ -9,22 +9,21 @@
 
 ## Live Deployment URL
 
-**Status:** Deployment pending.
+**Render URL:** https://bdf-lab-01-a8zp.onrender.com
 
-The application has not yet been deployed. The public URL will be added after successful deployment.
+**Deployment Status:** Successfully deployed.
 
-## 1. Introduction
+## 1. Objective
 
-This lab demonstrates the fundamentals of backend development using Node.js and Express.js. It involves creating an HTTP server, handling client requests, defining API endpoints, returning responses, and handling invalid routes.
+To understand the fundamentals of HTTP servers and Express.js by creating a server that handles different routes, returns responses, displays the current date and time, and handles invalid routes using a 404 response.
 
 ## 2. Technologies Used
 
 - Node.js
 - Express.js
 - JavaScript
-- npm
-- Visual Studio Code
-- Postman / Web Browser
+- Git and GitHub
+- Render
 
 ## 3. Project Structure
 
@@ -35,14 +34,9 @@ lab-01/
 │   ├── home.png
 │   ├── about.png
 │   ├── time.png
-│   ├── not-found.png
-│   ├── home-status.png
-│   ├── about-status.png
-│   ├── time-status.png
-│   └── not-found-status.png
+│   └── not-found.png
 │
 ├── .gitignore
-├── http-server.js
 ├── package.json
 ├── package-lock.json
 ├── server.js
@@ -53,106 +47,76 @@ lab-01/
 
 ### Prerequisites
 
-- Node.js installed.
-- npm installed.
+- Node.js installed
+- npm installed
 
-### Step 1: Navigate to the project directory
-
-```bash
-cd lab-01
-```
-
-### Step 2: Install dependencies
+### Installation
 
 ```bash
 npm install
 ```
 
-### Step 3: Start the Express server
+### Run the server
 
 ```bash
 node server.js
 ```
 
-The server runs on port 3000.
-
-### Step 4: Open the application
-
-Visit the following URL in your browser:
-
-```text
-http://localhost:3000
-```
-
-### Alternative: Run the native HTTP server
-
-```bash
-node http-server.js
-```
-
-Run only one server at a time because both use port 3000.
-
 ### Environment Variables
 
-No environment variables are currently required. The server uses port 3000.
+The server uses the following environment variable:
+
+| Variable | Description | Default |
+|---|---|---|
+| PORT | Port on which the server runs | 3000 |
+
+No additional environment variables are required.
 
 ## 5. API Endpoints
 
+Base URL: https://bdf-lab-01-a8zp.onrender.com
+
 | Method | Endpoint | Description |
 |---|---|---|
-| GET | `/` | Returns a welcome message. |
-| GET | `/about` | Returns student information in JSON format. |
-| GET | `/time` | Returns the current server date and time. |
-| GET | Unknown routes | Returns a 404 Page Not Found response. |
+| GET | `/` | Displays the welcome message. |
+| GET | `/about` | Returns student name and section in JSON format. |
+| GET | `/time` | Returns the current date and time. |
+| GET | `/anything` | Demonstrates the 404 response for an invalid route. |
 
-## 6. Screenshots and Output
+## 6. Screenshots of Working Output
 
-### 6.1 Home Endpoint
+### Home Endpoint
 
 Displays the welcome message.
 
 ![Home Endpoint](screenshots/home.png)
 
-### 6.2 About Endpoint
+### About Endpoint
 
-Displays student information in JSON format.
+Displays student details in JSON format.
 
 ![About Endpoint](screenshots/about.png)
 
-### 6.3 Time Endpoint
+### Time Endpoint
 
 Displays the current date and time.
 
 ![Time Endpoint](screenshots/time.png)
 
-### 6.4 Invalid Route
+### 404 Error Endpoint
 
-Displays a 404 Page Not Found response for an invalid route.
+Displays the page not found message for an invalid route.
 
-![404 Error](screenshots/not-found.png)
+![404 Error Endpoint](screenshots/not-found.png)
 
-## 7. HTTP Status Code Verification
+## 7. Deployment
 
-The following screenshots demonstrate the HTTP status codes returned by the server.
+The Express server was successfully deployed using Render.
 
-### Home Endpoint – Status 200
+**Live URL:** https://bdf-lab-01-a8zp.onrender.com
 
-![Home Status](screenshots/home-status.png)
-
-### About Endpoint – Status 200
-
-![About Status](screenshots/about-status.png)
-
-### Time Endpoint – Status 200
-
-![Time Status](screenshots/time-status.png)
-
-### Invalid Route – Status 404
-
-![Not Found Status](screenshots/not-found-status.png)
+All four endpoints were tested using the deployed public URL.
 
 ## 8. Conclusion
 
-Through this lab, I learned how to create HTTP and Express servers using Node.js. I understood how to define GET endpoints, process client requests, return text and JSON responses, retrieve date and time information, and handle invalid routes using appropriate HTTP status codes.
-
-This lab provided practical experience with backend development fundamentals and API request handling.
+Successfully created and deployed an HTTP server using Node.js and Express.js. Learned how to configure routes, handle HTTP GET requests, send text and JSON responses, use environment variables, handle invalid routes, and deploy a backend application using Render.
