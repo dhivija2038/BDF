@@ -1,12 +1,29 @@
 # Lab 2: SQLite Database and CRUD Routes
 
-**Name:** N DHIVIJA  
-**Registration Number:** 252U1R6112  
-**Section:** AIML-2B-207
+## Student Details
+
+- **Name:** N DHIVIJA
+- **Registration Number:** 252U1R6112
+- **Section:** AIML-2B-207
+- **Course:** Backend Development Fundamentals
+- **University:** Aurora Deemed to be University
+
+## Live Deployment
+
+**Render Deployment URL:** https://bdf-lab-02-oujw.onrender.com
+
+The application is deployed successfully on Render.
+
+### Live API Endpoints
+
+- **GET All Books:** https://bdf-lab-02-oujw.onrender.com/books/
+- **GET Single Book:** https://bdf-lab-02-oujw.onrender.com/books/1/
+
+The remaining POST, PUT and DELETE endpoints can be tested using Postman.
 
 ## Objective
 
-To connect an Express.js server with an SQLite database and implement CRUD (Create, Read, Update, Delete) operations using HTTP routes.
+To connect an Express.js server with an SQLite database and implement CRUD (Create, Read, Update, Delete) operations through REST API endpoints. This lab demonstrates how to perform database operations using asynchronous functions and parameterized SQL queries.
 
 ## Technologies Used
 
@@ -14,73 +31,149 @@ To connect an Express.js server with an SQLite database and implement CRUD (Crea
 - Express.js
 - SQLite
 - sqlite3
+- sqlite
+- Nodemon
 - Postman
+- Render
 
-## How to Run
+## Database Details
 
-1. Open the `lab-02` folder in the terminal.
-2. Install the dependencies:
+**Database File:** `books.db`
 
-   ```bash
-   npm install
-   ```
+**Table Name:** `book`
 
-3. Start the server in development mode:
+The database contains the following columns:
 
-   ```bash
-   npm run dev
-   ```
+| Column | Data Type |
+|---|---|
+| id | INTEGER PRIMARY KEY |
+| title | TEXT |
+| author | TEXT |
+| price | INTEGER |
+| pages | INTEGER |
 
-4. The server runs at:
+A total of 10 sample book records were inserted into the database using the SQLite CLI.
 
-   `http://localhost:3000`
+## Project Structure
+
+```text
+lab-02/
+│
+├── screenshots/
+│   ├── database-view.png
+│   ├── get-all-books.png
+│   ├── get-single-book.png
+│   ├── post-book.png
+│   ├── put-book.png
+│   ├── delete-book.png
+│   └── error-book.png
+│
+├── books.db
+├── database.js
+├── server.js
+├── package.json
+├── package-lock.json
+├── .gitignore
+└── README.md
+```
+
+## Installation and Execution
+
+### 1. Clone the Repository
+
+```bash
+git clone https://github.com/dhivija2038/BDF.git
+```
+
+### 2. Navigate to the Lab Folder
+
+```bash
+cd BDF/lab-02
+```
+
+### 3. Install Dependencies
+
+```bash
+npm install
+```
+
+### 4. Start the Development Server
+
+```bash
+npm run dev
+```
+
+The server runs at:
+
+```text
+http://localhost:3000
+```
+
+**Environment Variables:** No additional environment variables are required.
 
 ## API Endpoints
 
-| Method | Endpoint | Description |
+| HTTP Method | Endpoint | Description |
 |---|---|---|
-| GET | `/books/` | Retrieve all books |
-| GET | `/books/:bookId/` | Retrieve a book by ID |
-| POST | `/books/` | Add a new book |
-| PUT | `/books/:bookId/` | Update an existing book |
-| DELETE | `/books/:bookId/` | Delete a book |
+| GET | `/books/` | Retrieves all books from the database. |
+| GET | `/books/:bookId/` | Retrieves a specific book using its ID. |
+| POST | `/books/` | Adds a new book to the database. |
+| PUT | `/books/:bookId/` | Updates an existing book using its ID. |
+| DELETE | `/books/:bookId/` | Deletes a book using its ID. |
 
-## Database
+## Testing
 
-- Database file: `books.db`
-- Table name: `book`
-- Columns: `id`, `title`, `author`, `price`, `pages`
-- Initial records: 10 books
+All five CRUD endpoints were tested using Postman.
+
+- GET requests were used to retrieve all books and individual book details.
+- POST was used to insert a new book.
+- PUT was used to update an existing book.
+- DELETE was used to remove a book.
+- Invalid book IDs were tested to verify the error response.
+
+The database was also checked using the SQLite CLI to verify the records.
 
 ## Screenshots
 
-### Get All Books
-![Get All Books](screenshots/get-all-books.png)
+### 1. Database View
 
-### Get Single Book
-![Get Single Book](screenshots/get-single-book.png)
-
-### Add Book (POST)
-![Post Book](screenshots/post-book.png)
-
-### Update Book (PUT)
-![Put Book](screenshots/put-book.png)
-
-### Delete Book (DELETE)
-![Delete Book](screenshots/delete-book.png)
-
-### Error Handling
-![Error Book](screenshots/error-book.png)
-
-### Database View
 ![Database View](screenshots/database-view.png)
+
+### 2. GET All Books
+
+![GET All Books](screenshots/get-all-books.png)
+
+### 3. GET Single Book
+
+![GET Single Book](screenshots/get-single-book.png)
+
+### 4. POST Book
+
+![POST Book](screenshots/post-book.png)
+
+### 5. PUT Book
+
+![PUT Book](screenshots/put-book.png)
+
+### 6. DELETE Book
+
+![DELETE Book](screenshots/delete-book.png)
+
+### 7. Error Handling
+
+![Error Handling](screenshots/error-book.png)
+
+## Key Learnings
+
+- Connecting an Express.js application to an SQLite database.
+- Creating and managing database tables.
+- Performing CRUD operations using SQL queries.
+- Using asynchronous functions with `async` and `await`.
+- Using parameterized queries with `?` placeholders to prevent SQL injection.
+- Handling invalid book IDs with appropriate HTTP status codes.
+- Testing REST API endpoints using Postman.
+- Deploying a Node.js application using Render.
 
 ## Conclusion
 
-Successfully connected an Express.js server to an SQLite database and implemented all five CRUD operations. Tested the API endpoints using Postman and verified the database records using SQLite.
-
-## Problems Faced and Solutions
-
-- Resolved the SQLite CLI setup on Windows.
-- Connected the Express server to the SQLite database.
-- Tested successful and unsuccessful API requests using Postman.
+Through this lab, I learned how to integrate an SQLite database with an Express.js server and implement all five CRUD operations. I gained practical experience in writing SQL queries, handling asynchronous database operations, using parameterized queries, testing APIs with Postman, and deploying a backend application on Render.
