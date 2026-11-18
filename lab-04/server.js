@@ -11,6 +11,11 @@ const JWT_SECRET = process.env.JWT_SECRET;
 
 app.use(express.json());
 
+// Home Route - For Chrome Browser
+app.get('/', (req, res) => {
+    res.send('Lab 04 Backend Server is Running Successfully!');
+});
+
 let db;
 
 const initializeServer = async () => {
@@ -82,4 +87,7 @@ const initializeServer = async () => {
     });
 };
 
-initializeServer();
+initializeServer().catch((error) => {
+    console.error('Failed to start server:', error);
+    process.exit(1);
+});
