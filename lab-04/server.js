@@ -7,7 +7,7 @@ const openDatabase = require('./database');
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-const JWT_SECRET = 'lab4_secret_key';
+const JWT_SECRET = process.env.JWT_SECRET;
 
 app.use(express.json());
 
